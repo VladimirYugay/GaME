@@ -1,0 +1,59 @@
+# Python-related
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+venv/
+env/
+.env
+
+# PyTorch-related
+*.pth
+*.pt
+*.ckpt
+*.pyc
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# IDE-related
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-related
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.mp4
+*color.png
+
+# Data and model files (uncomment if needed)
+# data/
+# models/
+
+# Wandb
+wandb/
+
+# Experiment outputs
+outputs/
+output/
+results/
+
+# Cache
+*__pycache__/*
+*.pyc
+
+FlashSplat/arguments/__pycache__/*
+FlashSplat/scene/__pycache__/colmap_loader.cpython-310.pyc
+FlashSplat/scene/__pycache__/cameras.cpython-310.pyc
+FlashSplat/gaussian_renderer/__pycache__/__init__.cpython-310.pyc
+FlashSplat/arguments/__pycache__/__init__.cpython-310.pyc
+FlashSplat/scene/__pycache__/__init__.cpython-310.pyc
+FlashSplat/scene/__pycache__/dataset_readers.cpython-310.pyc
+FlashSplat/scene/__pycache__/gaussian_model.cpython-310.pyc

@@ -1,0 +1,52 @@
+project_name: 'GaME_debug'
+wandb: True
+wandb_group: "bruh"
+seed: 0
+output_path: output/flat/
+
+game:
+  first_keyframe_iters: 200
+  keyframe_iters: 50
+
+  refinement_only: False
+  refinement_iters: 30000
+
+  depth_change_threshold: 3.0               # depth difference threshold (scene units) for change detection
+  min_opacity: 0.3                          # minimum Gaussian alpha to be considered visible
+  color_error_threshold: .3                 # per-pixel L1 colour error (0–1) for conflict detection
+  removal_coverage_threshold: .25           # fraction of SAM mask covered by conflicting Gaussians to trigger removal
+  addition_coverage_threshold: .4           # fraction of SAM mask with new-geometry pixels to flag as addition
+  occlusion_ignore_threshold: 0.9           # fraction of mask covered by occlusion map to ignore a keyframe
+  gaussian_seed_threshold: 0.2              # colour gradient threshold for seeding new Gaussians from depth
+  covis_ignore_threshold: 1.0               # covisible-frame coverage fraction to mark it ignored after an addition
+  keyframe_translation_diff: 1.25
+
+  opacity_reset_interval: 6000
+  densify_from_iter: 1
+  densification_interval: 5000
+  densify_grad_threshold: 0.0002
+  min_grad: 0.01
+  # Scale factor applied to depth and pose translations. The GS renderer has
+  # numerical issues with very small depth values; set to 10 for this dataset
+  # where raw depth is in the range [0, 1] metres.
+  scale: 10.
+
+  #checkpoint: "./path/to/checkpoint.pth"
+  num_label_channels: 256    # number of object label channels for the FlashSplat rasterizer
+  isotropic_reg_weight: 0.5  # weight of the isotropic scale regularization loss
+
+
+data:
+  use_gt_labels: False
+  use_sam: False
+  use_dino: True
+  run_id: 'run1'
+  dataset_name: 'flat_dataset'
+  dataset_path: /path/to/Game_Flat/
+  start_frame: 0
+  width: 640
+  height: 480
+  fx: 320
+  fy: 320
+  cx: 320
+  cy: 240

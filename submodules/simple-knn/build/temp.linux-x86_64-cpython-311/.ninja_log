@@ -1,0 +1,4 @@
+# ninja log v5
+0	10236	1774099529598959509	/home/vy/projects/change_slam/FlashSplat/submodules/simple-knn/build/temp.linux-x86_64-cpython-311/simple_knn.o	89c9e9cfadd9450c
+0	13341	1774099532715041983	/home/vy/projects/change_slam/FlashSplat/submodules/simple-knn/build/temp.linux-x86_64-cpython-311/ext.o	2e8103efc3cea72f
+1	38705	1774099558054714244	/home/vy/projects/change_slam/FlashSplat/submodules/simple-knn/build/temp.linux-x86_64-cpython-311/spatial.o	ca1c8265e791c8e3

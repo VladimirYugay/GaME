@@ -1,0 +1,39 @@
+project_name: 'GaME_debug'
+wandb: True
+wandb_group: "bruh"
+seed: 0
+output_path: output/aria_1/
+
+game:
+  first_keyframe_iters: 200
+  keyframe_iters: 200
+
+  refinement_only: False
+  refinement_iters: 40000
+
+  depth_change_threshold: 0.05              # depth difference threshold (scene units) for change detection
+  color_error_threshold: .1                 # per-pixel L1 colour error (0–1) for conflict detection
+  min_opacity: 0.3                          # minimum Gaussian alpha to be considered visible
+  removal_coverage_threshold: .01           # fraction of SAM mask covered by conflicting Gaussians to trigger removal
+  addition_coverage_threshold: .4           # fraction of SAM mask with new-geometry pixels to flag as addition
+  occlusion_ignore_threshold: 0.2           # fraction of mask covered by occlusion map to ignore a keyframe
+  gaussian_seed_threshold: 0.1              # colour gradient threshold for seeding new Gaussians from depth
+  covis_ignore_threshold: 0.2               # covisible-frame coverage fraction to mark it ignored after an addition
+  keyframe_translation_diff: 0.01
+
+  opacity_reset_interval: 6000
+  densify_from_iter: 1
+  densification_interval: 5000
+  densify_grad_threshold: 0.0002
+  min_grad: 0.01
+
+  #checkpoint: "./path/to/checkpoint.pth"
+  num_label_channels: 256    # number of object label channels for the FlashSplat rasterizer
+  isotropic_reg_weight: 0.5  # weight of the isotropic scale regularization loss
+
+data:
+  dataset_path: /path/to/GaME_Aria/
+  run_id: 'run1'
+  start_frame: 0
+  dataset_name: 'aria_1'
+  aria_room: 1

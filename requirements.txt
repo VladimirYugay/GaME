@@ -1,0 +1,10 @@
+open3d==0.19.0
+pycocotools
+wandb
+trimesh
+torchmetrics
+opencv-python
+pandas
+plyfile
+h5py
+git+https://github.com/VainF/pytorch-msssim.git@c93cb31ade28b0236847c250b567597c7db84c79
